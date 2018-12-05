@@ -9,3 +9,10 @@
 ## Features to be added/not working
 * Image for 'Chicken Noodle Soup' not working
 * After order, jump back to begin screen
+
+<p float="left">
+  <img src="https://github.com/noudcorten/RESTaurant/blob/master/menu1.png" width="200" height="400"/>
+  <img src="https://github.com/noudcorten/RESTaurant/blob/master/menu2.png" width="200" height="400"/>
+  <img src="https://github.com/noudcorten/RESTaurant/blob/master/menu3.png" width="200" height="400"/>
+  <img src="https://github.com/noudcorten/RESTaurant/blob/master/menu4.png" width="200" height="400"/>
+</p>
