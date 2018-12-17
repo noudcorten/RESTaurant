@@ -69,14 +69,14 @@
 			isa = PBXGroup;
 			children = (
 				B397158D1F4C3B840096C164 /* AppDelegate.swift */,
+				B33DA8AE1F4C3F2400467925 /* MenuController.swift */,
+				B39715A81F4C3D3C0096C164 /* MenuItem.swift */,
+				B33DA8B11F4C64F000467925 /* AddToOrderDelegate.swift */,
 				B39715A11F4C3C0A0096C164 /* MenuTableViewController.swift */,
 				B39715A31F4C3C120096C164 /* OrderTableViewController.swift */,
-				B33DA8B11F4C64F000467925 /* AddToOrderDelegate.swift */,
 				B33DA8B41F4C789E00467925 /* OrderConfirmationViewController.swift */,
 				B397159F1F4C3BF90096C164 /* CategoryTableViewController.swift */,
 				B39715A61F4C3CC50096C164 /* MenuItemDetailViewController.swift */,
-				B33DA8AE1F4C3F2400467925 /* MenuController.swift */,
-				B39715A81F4C3D3C0096C164 /* MenuItem.swift */,
 				B39715911F4C3B840096C164 /* Main.storyboard */,
 				B39715941F4C3B840096C164 /* Assets.xcassets */,
 				B39715961F4C3B840096C164 /* LaunchScreen.storyboard */,

@@ -10,6 +10,7 @@ import UIKit
 
 class OrderTableViewController: UITableViewController, AddToOrderDelegate {
 
+    // MARK: properties
     var menuItems = [MenuItem]()
     var orderMinutes: Int?
     
@@ -22,6 +23,7 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: if the user wants to order to selected products the information of the OrderList is checked and the user is given a selection of this information (like: total price, selected items, etc.)
     @IBAction func submitTapped(_ sender: Any) {
         let orderTotal = menuItems.reduce(0.0) { (result, menuItem) -> Double in
             return result + menuItem.price
@@ -35,6 +37,7 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: the user gets a pop-up with the amount of time it will cost to receive the order
     func uploadOrder() {
         let menuIds = menuItems.map { $0.id }
         MenuController.shared.fetchSubmitOrder(menuIds: menuIds) { (minutes) in
@@ -47,6 +50,7 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
         }
     }
     
+    // MARK: when the user dismissed the information he/she gets sended back to the begin screen
     @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
         if segue.identifier == "DismissConfirmation" {
             menuItems.removeAll()

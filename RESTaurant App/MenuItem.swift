@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: struct which saves all the data of a MenuItem fetched from the server
 struct MenuItem {
     var id: Int
     var name: String
@@ -16,7 +17,7 @@ struct MenuItem {
     var category: String
     var imageURL: URL
     
-    struct PropertyKeys{
+    struct PropertyKeys {
         static let id = "id"
         static let name = "name"
         static let description = "description"

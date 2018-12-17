@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: used to update the TabBar if the user adds a menuItem
 protocol AddToOrderDelegate {
     func added(menuItem: MenuItem)
 }

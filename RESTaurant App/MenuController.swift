@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
+// MARK: menucontroller class which has all the functions that communicate with the server
 class MenuController {
     static let shared = MenuController()
     
     let baseURL = URL(string: "https://resto.mprog.nl/")!
 
+    // MARK: fetches all the categories on the server
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
         
@@ -28,6 +30,7 @@ class MenuController {
         task.resume()
     }
     
+    // MARK: fetches all the menu items for the given category
     func fetchMenuItems(categoryName: String, completion: @escaping ([MenuItem]?) -> Void) {
         let initialMenuURL = baseURL.appendingPathComponent("menu")
         var components = URLComponents(url: initialMenuURL, resolvingAgainstBaseURL: true)!
@@ -46,6 +49,7 @@ class MenuController {
         task.resume()
     }
     
+    // MARK: submits the order if the user is done selecting menuItems
     func fetchSubmitOrder(menuIds: [Int], completion: @escaping (Int?) -> Void) {
         let orderURL = baseURL.appendingPathComponent("order")
         
@@ -71,6 +75,7 @@ class MenuController {
         
     }
     
+    // MARK: fetches the image to the corresponding meal
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, let image = UIImage(data: data) {

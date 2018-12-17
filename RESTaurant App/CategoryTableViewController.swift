@@ -12,6 +12,7 @@ class CategoryTableViewController: UITableViewController {
 
     var categories = [String]()
     
+    // MARK: fetches all the categories the UI should represent
     override func viewDidLoad() {
         super.viewDidLoad()
         MenuController.shared.fetchCategories { (categories) in
@@ -25,6 +26,7 @@ class CategoryTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: updates the UI with the fetched categories
     func updateUI(with categories: [String]) {
         DispatchQueue.main.async {
             self.categories = categories
@@ -52,6 +54,7 @@ class CategoryTableViewController: UITableViewController {
         cell.textLabel?.text = categoryString.capitalized
     }
     
+    // MARK: if the user selects a category the segue is send for the MenuTableController with the selected category
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuSegue" {
             let menuTableViewController = segue.destination as! MenuTableViewController

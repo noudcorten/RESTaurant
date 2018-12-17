@@ -10,9 +10,11 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
+    // MARK: properties
     var menuItems = [MenuItem]()
     var category: String!
     
+    // MARK: when the view is loaded it fetches the menuItems and updates the UI accordingly
     override func viewDidLoad() {
         super.viewDidLoad()
         title = category.capitalized
@@ -27,6 +29,7 @@ class MenuTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // MARK: updates the UI by showing the available menuItems
     func updateUI(with menuItems: [MenuItem]) {
         DispatchQueue.main.async {
             self.menuItems = menuItems
@@ -49,6 +52,7 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: fetches the correct image for the corresponding menuItem
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let menuItem = menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
@@ -68,6 +72,7 @@ class MenuTableViewController: UITableViewController {
         return 100
     }
 
+    // MARK: when the user clicks a menuItem it goes to the detail screen with sending the data of the menuItem
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuDetailSegue" {
             let menuItemDetailViewController = segue.destination as! MenuItemDetailViewController
